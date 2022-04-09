@@ -2,8 +2,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function Header({ text }) {
+  const headerStyle = {
+      backgroundColor: 'rgba(0, 0, 0, 0.4)',
+      color: 'rgba(255, 101, 87, 0.7)',
+  }
+
   return (
-    <header>
+    <header style={headerStyle}>
         <div className="container">
             <div className="brand">
                 <h2>{text}</h2>

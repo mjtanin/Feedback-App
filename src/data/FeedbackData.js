@@ -19,6 +19,11 @@ const FeedbackData = [
         text: 'Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.',
         rating: 10
     },
+    {
+        id: 5,
+        text: 'Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.',
+        rating: 2
+    },
 ]
 
 export default FeedbackData;
