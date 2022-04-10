@@ -1,7 +1,18 @@
-import { useState } from "react"
+import PropTypes from 'prop-types';
+import { useContext, useEffect, useState } from "react";
+import FeedbackContext from './context/FeedbackContext';
 
 const RatingSelect = ({select}) => {
   const [selected , setSelected] = useState(10)
+  const { editFeedback } = useContext(FeedbackContext);
+
+  useEffect(() => {
+    if(editFeedback.isEditable === true) {
+      setSelected(editFeedback.item.rating)
+    }
+  
+  }, [editFeedback])
+  
   const handleChange = (e) => {
     setSelected(+e.currentTarget.value)
     select(+e.currentTarget.value)
@@ -17,6 +28,10 @@ const RatingSelect = ({select}) => {
       ))}
     </ul>
   )
+}
+
+RatingSelect.propTypes = {
+  select: PropTypes.func.isRequired,
 }
 
 export default RatingSelect
